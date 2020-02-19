@@ -34,6 +34,7 @@ TextView count;
 
         findViewById(R.id.btn_add_person).setOnClickListener(this);
         findViewById(R.id.view_persons).setOnClickListener(this);
+        findViewById(R.id.btn_count).setOnClickListener(this);
 
 
         mDatabase = new DatabaseHelper(this);
@@ -53,7 +54,7 @@ TextView count;
                 startActivity(intent);
 
                 break;
-                
+
             case R.id.btn_count:
               long i =   mDatabase.getTaskCount();
               count.setText(String.valueOf(i));
