@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 DatabaseHelper mDatabase;
 EditText firstname,lastname,address,phone;
+TextView count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ EditText firstname,lastname,address,phone;
         lastname = findViewById(R.id.last_name);
         address = findViewById(R.id.address);
         phone = findViewById(R.id.phone_number);
+        count = findViewById(R.id.countshow);
 
 
         findViewById(R.id.btn_add_person).setOnClickListener(this);
@@ -43,12 +46,19 @@ EditText firstname,lastname,address,phone;
             case R.id.btn_add_person:
                 addperson();
                 break;
+
             case R.id.view_persons:
                 //start activity to another activity to use the list of employees
                 Intent intent = new Intent(MainActivity.this,PersonList.class);
                 startActivity(intent);
 
                 break;
+                
+            case R.id.btn_count:
+              long i =   mDatabase.getTaskCount();
+              count.setText(String.valueOf(i));
+                Toast.makeText(this, "bjhdgvfchevh", Toast.LENGTH_SHORT).show();
+              break;
 
         }
     }

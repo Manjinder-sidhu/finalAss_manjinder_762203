@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -158,4 +160,45 @@ public class PersonAdapter extends ArrayAdapter {
 
     }
 
-}
+
+//    @Override
+//    public Filter getFilter() {
+//        Filter filter = new Filter() {
+//            @Override
+//            protected FilterResults performFiltering(CharSequence constraint) {
+//
+//                FilterResults filterResults = new FilterResults();
+//                if(constraint == null || constraint.length() == 0){
+//                    filterResults.count = persons.size();
+//                    filterResults.values = persons;
+//
+//                }else{
+//                    List<PersonClass> resultsModel = new ArrayList<>();
+//                    String searchStr = constraint.toString().toLowerCase();
+//
+//                    for(PersonClass  person1 : persons){
+//                        if(person1.getFirstname().contains(searchStr) ){
+//                            resultsModel.add(person1);
+//
+//                        }
+//                        filterResults.count = resultsModel.size();
+//                        filterResults.values = resultsModel;
+//                    }
+//
+//
+//                }
+//
+//                return filterResults;
+//            }
+//
+//            @Override
+//            protected void publishResults(CharSequence constraint, FilterResults results) {
+////              PersonClass  itemsModelListFiltered = (List<PersonClass>) results.values;
+//                notifyDataSetChanged();
+//
+//            }
+//        };
+//        return filter;
+//    }
+
+    }

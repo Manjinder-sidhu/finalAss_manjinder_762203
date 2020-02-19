@@ -73,9 +73,27 @@
             android:textColor="#00897B"
             android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/btn_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Count of persons"
+            android:textColor="#00897B" />
 
+        <TextView
+            android:id="@+id/countshow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:hint="Count of Added Persons"
 
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#00897B"
+            />
     </LinearLayout>
+
+
 
 
 </RelativeLayout>

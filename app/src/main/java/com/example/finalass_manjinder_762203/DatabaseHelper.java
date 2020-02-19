@@ -3,6 +3,7 @@ package com.example.finalass_manjinder_762203;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -94,5 +95,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //the delete method returns the  number of rows effected
         return sqLiteDatabase.delete(TABLE_NAME, COLUMN_ID +"=?", new String[]{String.valueOf(id)}) > 0;
     }
+
+    public long getTaskCount() {
+        String selectQuery = "SELECT "+COLUMN_ID+" FROM "+TABLE_NAME;
+        SQLiteDatabase database = this.getReadableDatabase();
+        Cursor c = database.rawQuery(selectQuery, null);
+        c.moveToFirst();
+       long total = c.getCount();
+        c.close();
+
+        return total;
+    }
+
+//    public long QueryNumEntries()
+//    {
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        return DatabaseUtils.queryNumEntries(db, "table_name");
+//    }
 
 }
